@@ -1,3 +1,5 @@
+
+
 a.По каждому городу количество продуктов, продаваемых 02.01.2024 
 select city, count(product) as quantity from test
 group by city, date
