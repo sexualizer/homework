@@ -23,11 +23,11 @@ order by max_cost;
 e.Товары, которые продавались в Кирове, но не продавались в Москве
 select city, product from test
 group by city, product 
-having city in ('Москва', 'Киров')
-except
-select city, product from test
-group by city, product 
-having city = 'Москва';
+having city = 'Киров' and product not in (
+	select product from test
+	where city = 'Москва'
+);
+
 
 
 f.Среднюю цену каждого товара на каждый день в сети магазинов
